@@ -45,28 +45,28 @@ public class Response<T> {
     }
 
 
-    public static <T>Response<T> ok(String code, String msg, T data) {
+    public static <T> Response<T> ok(String code, String msg, T data) {
         return new Response<T>(code, msg, data);
     }
 
-    public static <T>Response<T> ok(String msg, T data) {
+    public static <T> Response<T> ok(String msg, T data) {
         return new Response<T>(ResCode.OK, msg, data);
     }
 
-    public static <T>Response<T> ok(String msg) {
+    public static <T> Response<T> ok(String msg) {
         return new Response<T>(ResCode.OK, msg, null);
     }
 
 
-    public static <T>Response<T> error(String code, String msg, T data) {
+    public static <T> Response<T> error(String code, String msg, T data) {
         return new Response<T>(ResCode.ERROR, msg, data);
     }
 
-    public static <T>Response<T> error(String msg, T data) {
+    public static <T> Response<T> error(String msg, T data) {
         return new Response<T>(ResCode.ERROR, msg, data);
     }
 
-    public static <T>Response<T> error(String msg) {
+    public static <T> Response<T> error(String msg) {
         return new Response<T>(ResCode.ERROR, msg, null);
     }
 
