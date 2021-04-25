@@ -18,5 +18,7 @@ public class Const {
     public interface ResCode {
         String OK = "200";
         String ERROR = "000";
+        String SERVER_INTERNAL_ERROR = "500";
+        String NOT_FOUND = "404";
     }
 }

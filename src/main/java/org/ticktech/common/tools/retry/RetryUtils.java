@@ -21,8 +21,8 @@ import java.util.concurrent.ExecutionException;
 public class RetryUtils {
 
 
-    public static void tryTimes(int n, Callable<Boolean> call) {
-        final Retryer<Boolean> retry = RetryerBuilder.<Boolean>newBuilder()
+    public static<T> void tryTimes(int n, Callable<T> call) {
+        final Retryer<T> retry = RetryerBuilder.<T>newBuilder()
                 .retryIfException()
                 .withStopStrategy(StopStrategies.stopAfterAttempt(n))
                 .build();
@@ -32,6 +32,7 @@ public class RetryUtils {
             e.printStackTrace();
         }
     }
+
 
     public static void main(String[] args) {
         Callable<Boolean> callable = new Callable<Boolean>() {
